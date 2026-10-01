@@ -32,17 +32,23 @@ export default function Card({
 
     return (
         <InteractiveCard>
-            <Link href={`/venue/${vid}`}>
+            <Link href={`/venue/${vid}`} className="w-full h-[70%] relative rounded-t-lg overflow-hidden block">
                 <img
                     src={imgSrc}
                     alt={venueName}
-                    className="h-[200px] w-full rounded-lg object-cover"
+                    className="w-full h-[180px] object-cover rounded-t-lg"
                 />
-                <h2 className="mx-[5px] mt-[10px] mb-[5px] text-xl font-semibold text-indigo-900 text-center">
+                <div className="text-center text-gray-800 font-semibold text-lg py-2">
                     {venueName}
-                </h2>
+                </div>
             </Link>
-            <div className="flex justify-center pb-2">
+            <div 
+                className="w-full h-[30%] flex justify-center items-center pb-2" 
+                onClick={(e) => {
+                    e.stopPropagation();
+                    e.preventDefault();
+                }}
+            >
                 <Rating
                     id={`${venueName} Rating`}
                     name={`${venueName} Rating`}

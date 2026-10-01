@@ -24,7 +24,7 @@ export default function RootLayout(props: {
 }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="antialiased">
+      <body className="antialiased pt-[60px]">
         <TopMenu />
         {props.children}
       </body>
